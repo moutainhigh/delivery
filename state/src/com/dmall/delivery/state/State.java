@@ -11,12 +11,12 @@ public interface State {
     /**
      * 上一个状态机
      */
-    void before(State state);
+    State before(State state);
 
     /**
      * 下一个状态机
      */
-    void after(State state);
+    State after(State state);
 
     /**
      * 是否已经更改状态
@@ -28,5 +28,5 @@ public interface State {
      * 每个State实现各自实现状态扭转的方法
      * @return
      */
-    boolean changeState();
+    State changeState();
 }

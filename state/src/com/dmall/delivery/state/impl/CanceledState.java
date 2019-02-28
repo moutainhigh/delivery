@@ -13,9 +13,14 @@ public class CanceledState implements State {
 
     private boolean isStateChange;
 
-    @Override
-    public void before(State state) {
 
+
+    @Override
+    public State before(State state) {
+        //1.使用策略
+
+        //2.更改状态
+        return changeState();
     }
 
     @Override
@@ -29,7 +34,8 @@ public class CanceledState implements State {
     }
 
     @Override
-    public boolean changeState() {
-        return false;
+    public State changeState() {
+        //改变状态需要做的操作
+        return new InitProcessState();
     }
 }
