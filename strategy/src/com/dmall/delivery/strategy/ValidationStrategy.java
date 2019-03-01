@@ -9,7 +9,7 @@ package com.dmall.delivery.strategy;
 public interface ValidationStrategy extends Strategy{
 
     @Override
-    <T> boolean validate(T input);
+    boolean validate(Object input);
 
     ValidationStrategy getValidationType();
 }

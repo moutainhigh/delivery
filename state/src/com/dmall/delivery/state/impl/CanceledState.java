@@ -24,7 +24,7 @@ public class CanceledState implements State {
     }
 
     @Override
-    public void after(State state) {
+    public State after(State state) {
         throw new DeliveryException("End");
     }
 
