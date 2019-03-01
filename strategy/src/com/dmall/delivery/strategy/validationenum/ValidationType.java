@@ -8,6 +8,20 @@ package com.dmall.delivery.strategy.validationenum;
  */
 public enum ValidationType {
     /**
+     * 可配置选择项
+     */
+    ORDERSTATUS,
+    ORDERSTATUSCODE,
+    PRODUCTIONTYPE,
+    SHIPMENTTYPE,
+    TRADETYPE,
+    CARRIERTYPE,
+    ORDERORINGIN,
+
+    /**
+     * *************************组合判断项**************************
+     */
+    /**
      * 检查token信息
      */
     CHECKTOKEN,
@@ -23,6 +37,10 @@ public enum ValidationType {
      * 订单相关的记录是否存在
      */
     HASORDER,
+    /**
+     * 是否含有TASK信息
+     */
+    HASTASK,
     /**
      * 门店权限
      */
@@ -55,6 +73,13 @@ public enum ValidationType {
     /**
      * 配送员接单
      */
-    ISTAKEOVER
-
+    ISTAKEOVER,
+    /**
+     * 链商直流订单，妥投时校验上传图片参数
+     */
+    LSCHECKIMAGE,
+    /**
+     * 链商取件订单不支持妥投操作
+     */
+    LSCANNOTCOMPLETE
 }

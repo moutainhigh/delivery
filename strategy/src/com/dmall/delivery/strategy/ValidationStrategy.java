@@ -1,5 +1,7 @@
 package com.dmall.delivery.strategy;
 
+import com.dmall.delivery.strategy.validationenum.ValidationType;
+
 /**
  * ValidationStrategy
  *
@@ -11,5 +13,5 @@ public interface ValidationStrategy extends Strategy{
     @Override
     boolean validate(Object input);
 
-    ValidationStrategy getValidationType();
+    ValidationType getValidationType();
 }
