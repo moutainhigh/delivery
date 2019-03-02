@@ -1,8 +1,10 @@
 package com.dmall.delivery.strategy.statestrategy;
 
-import com.dmall.delivery.common.exception.OrderStatusEnum;
+import com.dmall.delivery.common.exception.vo.DeliveryBaseVO;
+import com.dmall.delivery.common.exception.vo.OrderStatusEnum;
 import com.dmall.delivery.strategy.validationenum.ConfigValidationType;
 import com.dmall.delivery.strategy.ValidationStrategy;
+import com.dmall.delivery.strategy.validationenum.ValidationType;
 
 /**
  * CanceledStateStrategy
@@ -12,22 +14,22 @@ import com.dmall.delivery.strategy.ValidationStrategy;
  */
 public enum CanceledStateStrategy implements ValidationStrategy {
 
-    ORDERSTATUS(ConfigValidationType.ORDERSTATUS){
+    ORDERSTATUS(ValidationType.ORDERSTATUS){
         @Override
-        public boolean validate(Object input) {
-            return (Integer)input< OrderStatusEnum.OrderCanceled.getKey();
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
+            return false;
         }
     };
 
 
-    private ConfigValidationType configValidationType;
+    private ValidationType validationType;
 
-    private CanceledStateStrategy(ConfigValidationType configValidationType) {
-        this.configValidationType = configValidationType;
+    private CanceledStateStrategy(ValidationType validationType) {
+        this.validationType = validationType;
     }
 
     @Override
-    public ValidationStrategy getValidationType() {
-        return null;
+    public ValidationType getValidationType() {
+        return validationType;
     }
 }

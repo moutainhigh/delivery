@@ -1,5 +1,6 @@
 package com.dmall.delivery.strategy.statestrategy;
 
+import com.dmall.delivery.common.exception.vo.DeliveryBaseVO;
 import com.dmall.delivery.strategy.ValidationStrategy;
 import com.dmall.delivery.strategy.validationenum.ValidationType;
 
@@ -13,25 +14,25 @@ public enum CompletedStateStrategy implements ValidationStrategy {
 
     CHECKTOKEN(ValidationType.CHECKTOKEN){
         @Override
-        public boolean validate(Object input) {
+        public<T extends DeliveryBaseVO> boolean validate(T input) {
             return false;
         }
     },
     HASORDER(ValidationType.HASORDER){
         @Override
-        public boolean validate(Object input) {
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
             return false;
         }
     },
     HASTASK(ValidationType.HASTASK){
         @Override
-        public boolean validate(Object input) {
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
             return false;
         }
     },
     ISORDERCOMPLETE(ValidationType.ISORDERCOMPLETE){
         @Override
-        public boolean validate(Object input) {
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
             return false;
         }
     },
@@ -41,7 +42,7 @@ public enum CompletedStateStrategy implements ValidationStrategy {
      */
     LSCHECKIMAGE(ValidationType.LSCHECKIMAGE){
         @Override
-        public boolean validate(Object input) {
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
             return false;
         }
     },
@@ -51,7 +52,7 @@ public enum CompletedStateStrategy implements ValidationStrategy {
      */
     LSCANNOTCOMPLETE(ValidationType.LSCANNOTCOMPLETE){
         @Override
-        public boolean validate(Object input) {
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
             return false;
         }
     }
@@ -65,7 +66,7 @@ public enum CompletedStateStrategy implements ValidationStrategy {
 
 
     @Override
-    public ValidationStrategy getValidationType() {
-        return null;
+    public ValidationType getValidationType() {
+        return validationType;
     }
 }

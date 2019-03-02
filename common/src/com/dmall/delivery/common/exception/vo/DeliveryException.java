@@ -1,4 +1,4 @@
-package com.dmall.delivery.common.exception;
+package com.dmall.delivery.common.exception.vo;
 
 /**
  * DeliveryException

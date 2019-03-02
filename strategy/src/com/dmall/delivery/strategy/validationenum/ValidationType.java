@@ -7,6 +7,7 @@ package com.dmall.delivery.strategy.validationenum;
  * @date 19-3-1
  */
 public enum ValidationType {
+    NOTHING,
     /**
      * 可配置选择项
      */
@@ -41,6 +42,11 @@ public enum ValidationType {
      * 是否含有TASK信息
      */
     HASTASK,
+
+    /**
+     * 是否有商品WARE数据
+     */
+    HASWARE,
     /**
      * 门店权限
      */
@@ -81,5 +87,13 @@ public enum ValidationType {
     /**
      * 链商取件订单不支持妥投操作
      */
-    LSCANNOTCOMPLETE
+    LSCANNOTCOMPLETE,
+    /**
+     * 取件原因
+     */
+    PICKREASON,
+    /**
+     * 拒收原因
+     */
+    REDELIVERRESON
 }

@@ -1,29 +1,30 @@
-package com.dmall.delivery.strategy.statestrategy;
+package com.dmall.delivery.strategy.abnormalstartegy;
 
 import com.dmall.delivery.common.exception.vo.DeliveryBaseVO;
-import com.dmall.delivery.common.exception.vo.DeliveryTaskVO;
 import com.dmall.delivery.strategy.ValidationStrategy;
 import com.dmall.delivery.strategy.validationenum.ValidationType;
 
-/**
- * InitProcessStateStrategy
- *
- * @author junyuan.chen
- * @date 19-3-1
- */
-public enum InitProcessStateStrategy implements ValidationStrategy {
-    NOTHING(ValidationType.NOTHING){
+public enum OrderInterceptStrategy implements ValidationStrategy {
+
+    ORDERSTATUSCODE(ValidationType.ORDERSTATUSCODE){
         @Override
         public <T extends DeliveryBaseVO> boolean validate(T input) {
             return false;
         }
-    } ;
+    },
 
+    TRADETYPE(ValidationType.TRADETYPE){
+        @Override
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
+            return false;
+        }
+    }
+    ;
 
 
     private ValidationType validationType;
 
-    InitProcessStateStrategy(ValidationType validationType) {
+    OrderInterceptStrategy(ValidationType validationType) {
         this.validationType = validationType;
     }
 

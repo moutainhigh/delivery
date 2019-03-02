@@ -1,5 +1,6 @@
 package com.dmall.delivery.strategy;
 
+import com.dmall.delivery.common.exception.vo.DeliveryBaseVO;
 import com.dmall.delivery.strategy.validationenum.ValidationType;
 
 /**
@@ -10,8 +11,7 @@ import com.dmall.delivery.strategy.validationenum.ValidationType;
  */
 public interface ValidationStrategy extends Strategy{
 
-    @Override
-    boolean validate(Object input);
+    <T extends DeliveryBaseVO> boolean validate(T input);
 
     ValidationType getValidationType();
 }

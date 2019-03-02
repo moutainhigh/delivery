@@ -1,5 +1,6 @@
 package com.dmall.delivery.strategy.statestrategy;
 
+import com.dmall.delivery.common.exception.vo.DeliveryBaseVO;
 import com.dmall.delivery.strategy.ValidationStrategy;
 import com.dmall.delivery.strategy.validationenum.ValidationType;
 
@@ -12,13 +13,13 @@ import com.dmall.delivery.strategy.validationenum.ValidationType;
 public enum DistributedStateStrategy implements ValidationStrategy {
     ISTAKEOVER(ValidationType.ISTAKEOVER){
         @Override
-        public boolean validate(Object input) {
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
             return false;
         }
     },
     HASORDER(ValidationType.HASORDER){
         @Override
-        public boolean validate(Object input) {
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
             return false;
         }
     };

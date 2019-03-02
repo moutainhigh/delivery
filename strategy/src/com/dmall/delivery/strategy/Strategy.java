@@ -8,5 +8,5 @@ package com.dmall.delivery.strategy;
  */
 public interface Strategy {
 
-    <T> boolean validate(T input);
+
 }

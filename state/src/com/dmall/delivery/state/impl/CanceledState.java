@@ -1,6 +1,6 @@
 package com.dmall.delivery.state.impl;
 
-import com.dmall.delivery.common.exception.DeliveryException;
+import com.dmall.delivery.common.exception.vo.DeliveryException;
 import com.dmall.delivery.state.State;
 
 /**
