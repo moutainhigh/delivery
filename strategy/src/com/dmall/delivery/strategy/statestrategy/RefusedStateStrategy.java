@@ -1,6 +1,6 @@
 package com.dmall.delivery.strategy.statestrategy;
 
-import com.dmall.delivery.common.exception.vo.DeliveryBaseVO;
+import com.dmall.delivery.common.vo.DeliveryBaseVO;
 import com.dmall.delivery.strategy.ValidationStrategy;
 import com.dmall.delivery.strategy.validationenum.ValidationType;
 
@@ -11,6 +11,13 @@ import com.dmall.delivery.strategy.validationenum.ValidationType;
  * @date 19-3-1
  */
 public enum RefusedStateStrategy implements ValidationStrategy {
+
+    HASORDER(ValidationType.HASORDER){
+        @Override
+        public <T extends DeliveryBaseVO> boolean validate(T input) {
+            return false;
+        }
+    },
 
     PRODUCTIONTYPE(ValidationType.PRODUCTIONTYPE){
         @Override

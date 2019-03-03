@@ -1,4 +1,4 @@
-package com.dmall.delivery.common.exception.service;
+package com.dmall.delivery.common.service;
 
 public class CommonUtil {
 

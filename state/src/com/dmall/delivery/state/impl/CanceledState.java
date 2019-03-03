@@ -1,6 +1,8 @@
 package com.dmall.delivery.state.impl;
 
-import com.dmall.delivery.common.exception.vo.DeliveryException;
+import com.dmall.delivery.common.vo.DeliveryBaseVO;
+import com.dmall.delivery.common.vo.DeliveryException;
+import com.dmall.delivery.state.ObservableState;
 import com.dmall.delivery.state.State;
 
 /**
@@ -9,33 +11,24 @@ import com.dmall.delivery.state.State;
  * @author junyuan.chen
  * @date 19-2-28
  */
-public class CanceledState implements State {
-
-    private boolean isStateChange;
-
-
+public class CanceledState extends ObservableState {
 
     @Override
-    public State before(State state) {
-        //1.使用策略
+    public void doAction(DeliveryBaseVO deliveryBaseVO) {
+        /**
+         * doAction实现私有的业务逻辑，一些无法使用模板的逻辑
+         */
+        //do somthing you like
 
-        //2.更改状态
-        return changeState();
-    }
-
-    @Override
-    public State after(State state) {
-        throw new DeliveryException("End");
-    }
-
-    @Override
-    public boolean isChangeState() {
-        return isStateChange;
-    }
-
-    @Override
-    public State changeState() {
-        //改变状态需要做的操作
-        return new InitProcessState();
+        /**
+         * 最后如果执行完所有的操作
+         * 记得changeState
+         */
+        changeState();
+        /**
+         * 如果没有changeState，表示doAction方法的执行是失败的
+         */
+        //可以根据实际情况来实现返回策略
+        //return Some Error
     }
 }

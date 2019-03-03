@@ -1,4 +1,4 @@
-package com.dmall.delivery.common.exception.vo;
+package com.dmall.delivery.common.vo;
 
 public class DeliveryBaseVO {
 

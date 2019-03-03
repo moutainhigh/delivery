@@ -1,7 +1,6 @@
 package com.dmall.delivery.strategy.statestrategy;
 
-import com.dmall.delivery.common.exception.vo.DeliveryBaseVO;
-import com.dmall.delivery.common.exception.vo.DeliveryTaskVO;
+import com.dmall.delivery.common.vo.DeliveryBaseVO;
 import com.dmall.delivery.strategy.ValidationStrategy;
 import com.dmall.delivery.strategy.validationenum.ValidationType;
 
